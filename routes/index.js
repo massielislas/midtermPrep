@@ -1,7 +1,8 @@
+
 var express = require('express');
 var router = express.Router();
+/*
 
-/* Set up mongoose in order to connect to mongo database */
 var mongoose = require('mongoose'); //Adds mongoose as a usable dependency
 
 
@@ -19,10 +20,19 @@ db.on('error', console.error.bind(console, 'connection error:')); //Checks for c
 db.once('open', function() { //Lets us know when we're connected
 console.log('Connected');
 });
+*/
 
 var candidates = ['Ben', 'Ryan', 'Maddy'];
 
 /* GET comments from database */
+
+router.get('/', function(req, res, next){
+  res.sendFile("index.html", {root: "public"});
+});
+
+router.get('/voter', function(req, res, next){
+  res.sendFile("voter.html", {root: "public"});
+});
 
 router.get('/candidates', function(req, res, next){
   res.json(candidates);

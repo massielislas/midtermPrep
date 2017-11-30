@@ -1,4 +1,4 @@
-angular.module('Candidates', []);
+angular.module('Candidates', [])
 .controller('MainCtrl', [
   '$scope',
   '$http',

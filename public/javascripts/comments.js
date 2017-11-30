@@ -23,6 +23,6 @@ function mainCtrl($scope, $http){
         $scope.votedFor.push($scope.candidates[i]);
       }
     }
-    console.log(votedFor);
+    console.log($scope.votedFor);
   }
 }

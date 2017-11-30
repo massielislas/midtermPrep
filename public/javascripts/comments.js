@@ -1,4 +1,4 @@
-angular.module('Candidates', ['ui.router'])
+angular.module('Candidates', [])
 .factory('candidateFactory',[function(){
   var o = {
     candidates : ['Ben', 'Ryan', 'Maddy']

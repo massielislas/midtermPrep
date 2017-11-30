@@ -20,7 +20,7 @@ function mainCtrl($scope, $http){
     console.log("You are here");
     for (let i = 0; i < $scope.candidates.length; i++){
       if($scope.candidates[i].selected == true){
-        $scope.votedFor.push($scope.candidateName[i]);
+        $scope.votedFor.push($scope.candidates[i]);
       }
     }
     console.log(votedFor);

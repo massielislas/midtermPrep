@@ -10,7 +10,7 @@
 <script src="comments.js"></script>
 </head>
 
-<body>
+<body ng-app="candidateApp" ng-controller="mainCtrl">
 <h1>Administrative Interface</h1>
 <form id="formCandidate" action="" class="jumbotron jumbotron-fluid">
 <label for="name">Candidate</label>
@@ -21,7 +21,7 @@
 
 <h1>Current Candidates</h1>
 <div ng-repeat="candidate in candidates">
-    <p> {{candidate}}<p>
+    <p> {{candidate.name}}<p>
 </div>
 </body>
 </html>

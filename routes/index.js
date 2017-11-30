@@ -26,7 +26,7 @@ var candidates = ['Ben', 'Ryan', 'Maddy'];
 
 /* GET comments from database */
 
-router.get('/', function(req, res, next){
+router.get('/admin', function(req, res, next){
   res.sendFile("index.html", {root: "public"});
 });
 

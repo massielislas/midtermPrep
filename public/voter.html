@@ -11,13 +11,16 @@
 <h1>Voter Interface</h1>
 
 <h1>Current Candidates</h1>
+<form id="formVoter" class="jumbotron jumbotron-fluid" ng-submit="votedCandidate()"></form>
 <div ng-repeat="candidate in candidates | orderBy: '-votes'">
-        <input type="checkbox">{{candidate.name}}<br>
+        <input type="checkbox" ng-model=candidate.selected>{{candidate.name}}<br>
 </div>
+<button id="postCandidate" class="btn btn-info" type="submit">Submit</button>
+</form>
 
 <h1>Submitted Ballot</h1>
-<div ng-repeat="candidate in candidates | orderBy: '-votes'">
-        <input type="checkbox">{{candidate.name}}<br>
+<div ng-repeat="candidate in votedFor| orderBy: '-votes'">
+        <p>{{candidate.name}}</p>
 </div>
 </body>
 </html>

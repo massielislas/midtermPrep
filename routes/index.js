@@ -20,29 +20,22 @@ db.once('open', function() { //Lets us know when we're connected
 console.log('Connected');
 });
 
-var voters = ['Ben', 'Ryan', 'Maddy'];
+var candidates = ['Ben', 'Ryan', 'Maddy'];
 
 /* GET comments from database */
 
-router.get('/voters', function(req, res, next){
-  res.json(voters);
-  console.log("In voters route");
+router.get('/candidates', function(req, res, next){
+  res.json(candidates);
+  console.log("GET candidates route");
 });
 
 
-router.post('/comment', function(req, res, next) {
-  console.log("POST comment route"); //[1]
-  var newcomment = new Comment(req.body); //[3]
-  console.log(newcomment); //[3]
-  newcomment.save(function(err, post) { //[4]
-    if (err) return console.error(err);
-    console.log(post);
-    res.sendStatus(200);
-});
+router.post('/candidates', function(req, res, next){
+  console.log("POST candidates route");
 });
 
 router.delete('/comment', function(req, res, next){
-  console.log("Delete");
+  console.log("DELETE candidates route");
   //DateTime.remove({}, callback)
   Comment.remove({}, function(err){
   });

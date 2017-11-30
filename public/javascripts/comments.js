@@ -1,7 +1,20 @@
-$(document).ready(function(){
-  $("#postComment").click(function(){
-    var myobj = {Name:$("#name").val(),Comment:$("#comment").val()};
-    jobj = JSON.stringify(myobj);
-    $("#json").text(jobj);
-  });
-});
+angular.module('Candidates', ['ui.router'])
+.factory('candidateFactory',[function(){
+  var o = {
+    candidates : ['Ben', 'Ryan', 'Maddy']
+  };
+  return o;
+}])
+.controller('MainCtrl', [
+  '$scope',
+  '$http',
+  'CandidateFactory',
+  function($scope, $http, candidateFactory){
+    $scope.candidates =  candidateFactory.candidates;
+    $scope.candidateName = 
+    $scope.candidates.push({
+      name = $scope.candidateName,
+      votes = 0
+    })
+  }
+]);

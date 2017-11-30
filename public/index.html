@@ -6,21 +6,21 @@
 <script src="javascripts/comments.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<script src="comments.js"></script>
 </head>
 
 <body>
 <h1>Administrative Interface</h1>
-<form id="candidateForm" action="" class="jumbotron jumbotron-fluid">
-<label for="name">Candidate</label><input type="text" id="name" placeholder="Name" ><br>
+<form id="formCandidate" action="" class="jumbotron jumbotron-fluid">
+<label for="name">Candidate</label>
+<input type="text" ng-model="candidateName" id="name" placeholder="Name" ><br>
 </form>
 <button id="postCandidate" class="btn btn-info">Add Candidate</button>
-<div ng-repeat="legendaryAction in monster.legendaryActions">
-               <p> Legendary Action {{$index +1}}: {{legendaryAction.desc|| "None"}}<p>
 </div>
 
 <h1>Current Candidates</h1>
-<div id="json"></div>
-<div id="done"></div>
-<div id="comments"></div>
+<div ng-repeat="candidate in candidates">
+    <p> {{candidate.name}}<p>
+</div>
 </body>
 </html>

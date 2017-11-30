@@ -11,9 +11,5 @@ angular.module('Candidates', ['ui.router'])
   'CandidateFactory',
   function($scope, $http, candidateFactory){
     $scope.candidates =  candidateFactory.candidates;
-    $scope.candidates.push({
-      name = $scope.candidateName,
-      votes = 0
-    })
   }
 ]);

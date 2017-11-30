@@ -18,8 +18,8 @@ function mainCtrl($scope, $http){
 
   $scope.votedCandidate = function(){
     console.log("You are here");
-    for (var i = 0; i < $scope.candidates.length; i++){
-      if($scope.candidates[i].selected == 1){
+    for (let i = 0; i < $scope.candidates.length; i++){
+      if($scope.candidates[i].selected == true){
         $scope.votedFor.push($scope.candidateName[i]);
       }
     }

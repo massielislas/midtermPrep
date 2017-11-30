@@ -1,6 +1,6 @@
 var candidateApp = window.angular.module('candidateApp', [])
 
-candidateApp.controller('mainCtrl', mainCtrl);
+candidateApp.controller('mainCtrl', mainCtrl, 'scope', '$http');
 function mainCtrl($scope, $http){
   console.log("Is it working?");
   $scope.candidates = [];

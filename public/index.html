@@ -9,11 +9,10 @@
 
 <body ng-app="candidateApp" ng-controller="mainCtrl">
 <h1>Administrative Interface</h1>
-<form id="formCandidate" action="" class="jumbotron jumbotron-fluid">
-<label for="name">Candidate</label>
+<form id="formCandidate" action="" class="jumbotron jumbotron-fluid" ng-submit="addCandidate()">
 <input type="text" ng-model="candidateName" id="name" placeholder="Name" ><br>
+<button id="postCandidate" class="btn btn-info" type="submit">Candidate</button>
 </form>
-<button id="postCandidate" class="btn btn-info">Add Candidate</button>
 </div>
 
 <h1>Current Candidates</h1>

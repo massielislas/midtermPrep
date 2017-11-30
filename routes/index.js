@@ -21,6 +21,9 @@ db.once('open', function() { //Lets us know when we're connected
 console.log('Connected');
 });
 */
+
+
+
 var candidates = [];
 candidates.push({name : "Ryan", votes : 0, selected : 0});
 
@@ -37,6 +40,7 @@ router.get('/voter', function(req, res, next){
 router.get('/candidates', function(req, res, next){
   res.json(candidates);
   console.log("GET candidates route");
+  console.log(candidates);
 });
 
 

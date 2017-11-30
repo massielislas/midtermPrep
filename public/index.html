@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Comments!</title>
+<title>Admin</title>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="javascripts/comments.js"></script>
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
@@ -14,6 +14,9 @@
 <label for="name">Candidate</label><input type="text" id="name" placeholder="Name" ><br>
 </form>
 <button id="postComment" class="btn btn-info">Add Candidate</button>
+<div ng-repeat="legendaryAction in monster.legendaryActions">
+               <p> Legendary Action {{$index +1}}: {{legendaryAction.desc|| "None"}}<p>
+</div>
 
 <h1>Current Candidates</h1>
 <div id="json"></div>

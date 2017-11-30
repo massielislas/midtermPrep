@@ -16,7 +16,7 @@
 </div>
 
 <h1>Current Candidates</h1>
-<div ng-repeat="candidate in candidates">
+<div ng-repeat="candidate in candidates | orderBy: '-upvotes'">
     <p> {{candidate.name}}</p>
 </div>
 </body>

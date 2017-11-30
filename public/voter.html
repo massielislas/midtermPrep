@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Vote!</title>
-<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-<script src="javascripts/comments.js"></script>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+<title>Admin</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css">
-<script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+<script src="javascripts/comments.js" type = "text/javascript"></script>
 </head>
 
 <body>
 <h1>Voter Interface</h1>
 
 <h1>Current Candidates</h1>
-<button id="postCandidate" class="btn btn-info">Add Candidate</button>
-<div id="json"></div>
-<div id="done"></div>
-<div id="comments"></div>
+<div ng-repeat="candidate in candidates | orderBy: '-votes'">
+        <input type="checkbox">{{candidate.name}}<br>
+</div>
 
 <h1>Submitted Ballot</h1>
+<div ng-repeat="candidate in candidates | orderBy: '-votes'">
+        <input type="checkbox">{{candidate.name}}<br>
+</div>
 </body>
 </html>

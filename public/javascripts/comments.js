@@ -1,7 +1,6 @@
 var candidateApp = window.angular.module('candidateApp', [])
 
-candidateApp.controller('mainCtrl',[
-  '$scope', '$http',
+candidateApp.controller('mainCtrl', mainCtrl);
 function mainCtrl($scope, $http){
   console.log("Is it working?");
   $scope.candidates = [];
@@ -32,4 +31,4 @@ function mainCtrl($scope, $http){
     });
   };
   $scope.getAll();
-}])
+}

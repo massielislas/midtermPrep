@@ -27,7 +27,7 @@ function mainCtrl($scope, $http){
 
   $scope.getAll = function() {
     return $http.get('/candidates').then(function(data){
-      angular.copy(data, $scope.comments);
+      angular.copy(data, $scope.candidates);
     });
   };
   $scope.getAll();

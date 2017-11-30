@@ -1,10 +1,10 @@
 var candidateApp = window.angular.module('candidateApp', [])
 
-candidateApp.controller('mainCtrl', mainCtrl);
+candidateApp.controller('mainCtrl',[
+  '$scope', '$http',
 function mainCtrl($scope, $http){
   console.log("Is it working?");
   $scope.candidates = [];
-  $scope.candidates.push({name : "Ryan", votes : 0, selected : 0});
   $scope.votedFor = [];
 
   $scope.addCandidate = function(){
@@ -25,4 +25,11 @@ function mainCtrl($scope, $http){
     }
     console.log($scope.votedFor);
   }
-}
+
+  $scope.getAll = function() {
+    return $http.get('/candidates').success(function(data){
+      angular.copy(data, $scope.comments);
+    });
+  };
+  $scope.getAll();
+}])

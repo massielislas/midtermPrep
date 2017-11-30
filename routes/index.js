@@ -21,8 +21,8 @@ db.once('open', function() { //Lets us know when we're connected
 console.log('Connected');
 });
 */
-
-var candidates = ['Ben', 'Ryan', 'Maddy'];
+var candidates = [];
+candidates.push({name : "Ryan", votes : 0, selected : 0});
 
 /* GET comments from database */
 

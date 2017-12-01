@@ -24,8 +24,9 @@ console.log('Connected');
 
 var mongoose = require('mongoose');
 var CandidateSchema =  new mongoose.Schema({
-  Name : String,
-  Votes : {type: Number, default: 0},
+  name : String,
+  votes : {type: Number, default: 0},
+  selected : Number
 });
 var Candidate = mongoose.model('candidate', CandidateSchema);
 
@@ -57,9 +58,9 @@ router.post('/candidates', function(req, res, next){
   candidate.save(function(err,comment){
     if(err){return next(err);}
     res.json(candidate);
+    console.log("Posted to DB");
+    console.log(candidate);
   });
-  console.log("Posted to DB");
-  console.log(candidate);
 });
 
 router.delete('/comment', function(req, res, next){

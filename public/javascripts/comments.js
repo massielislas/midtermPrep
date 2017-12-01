@@ -28,7 +28,7 @@ function mainCtrl($scope, $http){
     console.log($scope.votedFor);
 
     for (let i = 0; i < $scope.votedFor.length; i++){
-      $http.put('/candidates/' + $scope.candidates[i]._id + '/votes')
+      $http.put('/candidates/' + $scope.votedFor[i]._id + '/votes')
       .then(function(data){
       });
     }

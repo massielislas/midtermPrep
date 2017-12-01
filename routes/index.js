@@ -53,6 +53,7 @@ router.get('/candidates', function(req, res, next){
 
 router.post('/candidates', function(req, res, next){
   var candidate = new Candidate(req.body);
+  console.log(req.body);
   candidate.save(function(err,comment){
     if(err){return next(err);}
     res.json(candidate);

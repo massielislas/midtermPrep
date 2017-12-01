@@ -36,6 +36,8 @@ function mainCtrl($scope, $http){
 
 $scope.delete = function(candidate){
   $http.delete('/candidates/' + candidate._id).then(function(response){
+    var index = $scope.candidates.indexOf(candidate);
+    $scope.candidates.splice(index, 1);
     console.log(response);
   })
 }

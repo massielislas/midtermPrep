@@ -34,6 +34,12 @@ function mainCtrl($scope, $http){
     }
   }
 
+$scope.delete = function(candidate){
+  $http.delete('/candidates/' + candidate._id).then(function(response){
+    console.log(response);
+  })
+}
+
 
   $scope.getAll = function() {
     console.log("HERE WE ARE");

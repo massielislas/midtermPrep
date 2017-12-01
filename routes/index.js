@@ -81,6 +81,12 @@ router.put('/candidates/:candidate/votes', function(req, res, next) {
   });
 });
 
+router.delete('/candidates/:candidate', function(req,res){
+  console.log("about to delete");
+  req.candidate.remove();
+  res.sendStatus(200);
+})
+
 router.delete('/comment', function(req, res, next){
   console.log("DELETE candidates route");
   //DateTime.remove({}, callback)

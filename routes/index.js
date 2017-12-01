@@ -55,7 +55,7 @@ router.get('/candidates', function(req, res, next){
 router.post('/candidates', function(req, res, next){
   var candidate = new Candidate(req.body);
   console.log(req.body);
-  candidate.save(function(err,comment){
+  candidate.save(function(err,candidate){
     if(err){return next(err);}
     res.json(candidate);
     console.log("Posted to DB");
@@ -63,6 +63,7 @@ router.post('/candidates', function(req, res, next){
   });
 });
 
+/*
 router.param('candidate', function(req, res, next, id){
   var query = Candidate.findById(id);
   query.exec(function(err, candidate){
@@ -71,7 +72,9 @@ router.param('candidate', function(req, res, next, id){
     req.candidate = candidate;
     return next();
   });
+
 });
+*/
 
 router.get('/candidates/:candidate', function(req, res){
   res.json(req.candidate);

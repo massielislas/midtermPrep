@@ -46,6 +46,10 @@ router.get('/candidates', function(req, res, next){
 
 router.post('/candidates', function(req, res, next){
   console.log("POST candidates route");
+  console.log(req.body);
+  var candidateToAdd = req.body;
+  candidates.push(candidateToAdd);
+  res.json(candidateToAdd);
 });
 
 router.delete('/comment', function(req, res, next){

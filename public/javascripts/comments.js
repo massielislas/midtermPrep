@@ -8,10 +8,13 @@ function mainCtrl($scope, $http){
 
   $scope.addCandidate = function(){
     console.log("added candidate");
-    $scope.candidates.push({
+    var addCandidate = {
       name : $scope.candidateName,
       votes : 0,
       selected : 0
+    };
+    $http.post("/candidates", addCandidate).then(function(response){
+      $scope.candidates.push(addCandidate);
     })
   }
 

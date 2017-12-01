@@ -23,7 +23,7 @@ console.log('Connected');
 */
 
 var mongoose = require('mongoose');
-var CandidateSchema = mongoose.Schema({
+var CandidateSchema =  new mongoose.Schema({
   Name : String,
   Votes : {type: Number, default: 0},
 });

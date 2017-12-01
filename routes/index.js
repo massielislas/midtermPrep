@@ -27,7 +27,7 @@ var CandidateSchema = mongoose.Schema({
   Name : String,
   Votes : {type: Number, default: 0},
 });
-var Candidate = mongoose.model('Candidates', CandidateSchema);
+var Candidate = mongoose.model('candidate', CandidateSchema);
 
 var candidates = [];
 candidates.push({name : "Ryan", votes : 0, selected : 0});
@@ -43,18 +43,22 @@ router.get('/voter', function(req, res, next){
 });
 
 router.get('/candidates', function(req, res, next){
-  res.json(candidates);
-  console.log("GET candidates route");
-  console.log(candidates);
+  Candidate.find(function(err, candidates){
+    if(err){return next(err);}
+    res.json(candidates);
+  });
+  console.log("got candidates");
 });
 
 
 router.post('/candidates', function(req, res, next){
-  console.log("POST candidates route");
-  console.log(req.body);
-  var candidateToAdd = req.body;
-  candidates.push(candidateToAdd);
-  res.json(candidateToAdd);
+  var candidate = new Candidate(req.body);
+  candidate.save(function(err,comment){
+    if(err){return next(err);}
+    res.json(candidate);
+  });
+  console.log("Posted to DB");
+  console.log(candidate);
 });
 
 router.delete('/comment', function(req, res, next){

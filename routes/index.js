@@ -41,6 +41,7 @@ router.get('/candidates', function(req, res, next){
   Candidate.find(function(err, candidates){
     if(err){return next(err);}
     res.json(candidates);
+    console.log(candidates);
   });
   console.log("got candidates");
 });

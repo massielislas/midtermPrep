@@ -81,6 +81,13 @@ router.get('/candidates/:candidate', function(req, res){
   res.json(req.candidate);
 });
 
+router.put('/candidates/:candidate/votes', function(req, res, next) {
+  req.candidate.votes(function(err, candidate){
+    if (err) { return next(err); }
+    res.json(candidate);
+  });
+});
+
 router.delete('/comment', function(req, res, next){
   console.log("DELETE candidates route");
   //DateTime.remove({}, callback)

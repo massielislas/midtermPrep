@@ -26,7 +26,14 @@ function mainCtrl($scope, $http){
       }
     }
     console.log($scope.votedFor);
+
+    for (let i = 0; i < $scope.votedFor.length; i++){
+      $http.put('/candidates/' + candidates[i]._id + '/votes')
+      .then(function(data){
+      });
+    }
   }
+
 
   $scope.getAll = function() {
     return $http.get('/candidates').then(function(data){

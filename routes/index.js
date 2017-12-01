@@ -21,13 +21,7 @@ db.once('open', function() { //Lets us know when we're connected
 console.log('Connected');
 });
 */
-
 var mongoose = require('mongoose');
-var CandidateSchema =  new mongoose.Schema({
-  name : String,
-  votes : {type: Number, default: 0},
-  selected : Number
-});
 var Candidate = mongoose.model('candidate', CandidateSchema);
 
 var candidates = [];

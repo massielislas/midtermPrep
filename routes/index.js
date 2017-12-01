@@ -73,6 +73,10 @@ router.param('candidate', function(req, res, next, id){
   });
 });
 
+router.get('/candidates/:canddate', function(req, res){
+  res.json(req.comment);
+});
+
 router.delete('/comment', function(req, res, next){
   console.log("DELETE candidates route");
   //DateTime.remove({}, callback)

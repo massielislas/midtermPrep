@@ -63,6 +63,16 @@ router.post('/candidates', function(req, res, next){
   });
 });
 
+router.param('candidate', function(req, res, next, id){
+  var query = Candidate.findById(id);
+  query.exec(function(err, comment){
+    if (err){return next(err);}
+    if(!candidate){ return next(new Error("can't find comment")); }
+    req.candidate = candidate;
+    return next();
+  });
+});
+
 router.delete('/comment', function(req, res, next){
   console.log("DELETE candidates route");
   //DateTime.remove({}, callback)

@@ -22,7 +22,12 @@ console.log('Connected');
 });
 */
 
-
+var mongoose = require('moongoose');
+var CandidateSchema = mongoose.Schema({
+  Name : String,
+  Votes : {type: Number, default: 0},
+});
+var Candidate = mongoose.model('Candidates', CandidateSchema);
 
 var candidates = [];
 candidates.push({name : "Ryan", votes : 0, selected : 0});

@@ -22,7 +22,7 @@ console.log('Connected');
 });
 */
 var mongoose = require('mongoose');
-var Candidate = mongoose.model('candidate', CandidateSchema);
+var Candidate = mongoose.model('candidate');
 
 var candidates = [];
 candidates.push({name : "Ryan", votes : 0, selected : 0});

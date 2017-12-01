@@ -22,7 +22,7 @@ console.log('Connected');
 });
 */
 
-var mongoose = require('moongoose');
+var mongoose = require('mongoose');
 var CandidateSchema = mongoose.Schema({
   Name : String,
   Votes : {type: Number, default: 0},

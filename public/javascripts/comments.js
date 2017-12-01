@@ -37,8 +37,8 @@ function mainCtrl($scope, $http){
 
   $scope.getAll = function() {
     console.log("HERE WE ARE");
-    return $http.get('/candidates').then(function(data){
-      angular.copy(data, $scope.candidates);
+    return $http.get('/candidates').then(function(response){
+      angular.copy(response.data, $scope.candidates);
     });
   };
   $scope.getAll();

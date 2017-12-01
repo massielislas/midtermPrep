@@ -65,9 +65,9 @@ router.post('/candidates', function(req, res, next){
 
 router.param('candidate', function(req, res, next, id){
   var query = Candidate.findById(id);
-  query.exec(function(err, comment){
+  query.exec(function(err, candidate){
     if (err){return next(err);}
-    if(!candidate){ return next(new Error("can't find comment")); }
+    if(!candidate){ return next(new Error("can't find candidate")); }
     req.candidate = candidate;
     return next();
   });

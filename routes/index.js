@@ -76,7 +76,7 @@ router.get('/candidates/:candidate', function(req, res){
 });
 
 router.put('/candidates/:candidate/votes', function(req, res, next) {
-  req.candidate.votes(function(err, candidate){
+  req.candidate.voting(function(err, candidate){
     if (err) { return next(err); }
     res.json(candidate);
   });

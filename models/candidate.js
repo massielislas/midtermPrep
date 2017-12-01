@@ -5,7 +5,7 @@ var CandidateSchema =  new mongoose.Schema({
   selected : Number
 });
 
-CandidateSchema.methods.votes = function(cb) {
+CandidateSchema.methods.voting = function(cb) {
     this.votes += 1;
     this.save(cb);
 };

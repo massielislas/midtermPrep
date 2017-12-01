@@ -63,7 +63,7 @@ router.post('/candidates', function(req, res, next){
   });
 });
 
-/*
+
 router.param('candidate', function(req, res, next, id){
   var query = Candidate.findById(id);
   query.exec(function(err, candidate){
@@ -74,13 +74,12 @@ router.param('candidate', function(req, res, next, id){
   });
 
 });
-*/
 
-/*
+
+
 router.get('/candidates/:candidate', function(req, res){
   res.json(req.candidate);
 });
-*/
 
 router.delete('/comment', function(req, res, next){
   console.log("DELETE candidates route");
